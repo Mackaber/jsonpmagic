@@ -4,12 +4,19 @@ require 'faraday'
 
 app = Proc.new do |env|
   req = Rack::Request.new(env)
-  url = req['url']
-  jsonp = req['jsonp']
 
-  response = Faraday.get url
+  if req['url'] && req['jsonp']
+    url = req['url']
+    jsonp = req['jsonp']
 
-  [200, { 'Content-Type' => 'application/json' }, [ JsonPath.on(response.body, jsonp).to_json ]]
+    res = Faraday.get url
+
+    response = JsonPath.on(res.body, jsonp).to_json
+  else
+    response = "Usage... \n\nhttp://jsonpmagic.mackaber.me/?url=http://example.com/resource.json&jsonp=$(some jsonp expression)"
+  end
+
+  [200, { 'Content-Type' => 'application/json' }, [ response ]]
 end
 
 run app
