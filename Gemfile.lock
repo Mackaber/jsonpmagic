@@ -8,6 +8,7 @@ GEM
       multi_json
     multi_json (1.12.1)
     multipart-post (2.0.0)
+    rack (2.0.1)
 
 PLATFORMS
   ruby
@@ -16,6 +17,7 @@ DEPENDENCIES
   faraday
   json
   jsonpath
+  rack
 
 BUNDLED WITH
    1.12.5
