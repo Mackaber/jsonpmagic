@@ -12,7 +12,11 @@ GEM
     net-http (0.4.1)
       uri
     rack (3.0.10)
+    rackup (2.1.0)
+      rack (>= 3)
+      webrick (~> 1.8)
     uri (0.13.0)
+    webrick (1.8.1)
 
 PLATFORMS
   x86_64-linux
@@ -21,7 +25,7 @@ DEPENDENCIES
   faraday
   json
   jsonpath
-  rack
+  rackup (~> 2.1)
 
 RUBY VERSION
    ruby 3.1.4p223

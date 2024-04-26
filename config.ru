@@ -13,10 +13,10 @@ app = Proc.new do |env|
 
     response = JsonPath.on(res.body, jsonp).to_json
   else
-    response = "Usage... \n\nhttp://jsonpmagic.mackaber.me/?url=http://example.com/resource.json&jsonp=$(some jsonp expression)"
+    response = { usage: "http://jsonpmagic.mackaber.me/?url=http://example.com/resource.json&jsonp=$(some jsonp expression)" }.to_json
   end
 
-  [200, { 'Content-Type' => 'application/json' }, [ response ]]
+  [200, { 'content-type' => 'application/json' }, [ response ]]
 end
 
 run app
