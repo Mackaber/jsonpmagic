@@ -1,17 +1,21 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    faraday (0.11.0)
-      multipart-post (>= 1.2, < 3)
-    json (2.0.3)
-    jsonpath (0.5.8)
+    faraday (2.9.0)
+      faraday-net_http (>= 2.0, < 3.2)
+    faraday-net_http (3.1.0)
+      net-http
+    json (2.7.2)
+    jsonpath (1.1.5)
       multi_json
-    multi_json (1.12.1)
-    multipart-post (2.0.0)
-    rack (2.0.1)
+    multi_json (1.15.0)
+    net-http (0.4.1)
+      uri
+    rack (3.0.10)
+    uri (0.13.0)
 
 PLATFORMS
-  ruby
+  x86_64-linux
 
 DEPENDENCIES
   faraday
@@ -19,5 +23,8 @@ DEPENDENCIES
   jsonpath
   rack
 
+RUBY VERSION
+   ruby 3.1.4p223
+
 BUNDLED WITH
-   1.12.5
+   2.4.19
